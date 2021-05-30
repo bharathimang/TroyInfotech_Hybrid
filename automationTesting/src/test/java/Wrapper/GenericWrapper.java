@@ -6,7 +6,10 @@ import java.util.Random;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import tests.Base;
 
@@ -32,6 +35,11 @@ public class GenericWrapper extends Base {
 		ssfileName=randomStringGenerator(8);
 		File d=new File("target//Screenshots//"+ssfileName+".png");
 		FileHandler.copy(f, d);
+	}
+	
+	public static void waitForVisibility(WebElement ele) throws Throwable{
+		WebDriverWait wait=new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
 }
