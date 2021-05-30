@@ -32,7 +32,6 @@ public class LoginPage extends Base {
 		try {
 			System.out.println(userName.isDisplayed());
 			System.out.println(password.isDisplayed());
-			System.out.println(loginBtn.isDisplayed());
 			test.log(Status.PASS, "Elements Validations");
 		}
 
