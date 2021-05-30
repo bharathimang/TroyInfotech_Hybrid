@@ -20,19 +20,19 @@ public class LoginPage extends Base {
 	}
 
 	@FindBy(xpath = "//input[@id='txtUsername']")
-	public static WebElement uName;
+	public static WebElement userName;
 
 	@FindBy(xpath = "//input[@id='txtPassword']")
-	public static WebElement pwd;
+	public static WebElement password;
 
 	@FindBy(xpath = "//input[@id='btnLogin']")
-	public static WebElement btn;
+	public static WebElement loginBtn;
 
 	public void doValidation() throws IOException {
 		try {
-			System.out.println(uName.isDisplayed());
-			System.out.println(pwd.isDisplayed());
-			System.out.println(btn.isDisplayed());
+			System.out.println(userName.isDisplayed());
+			System.out.println(password.isDisplayed());
+			System.out.println(loginBtn.isDisplayed());
 			test.log(Status.PASS, "Elements Validations");
 		}
 
@@ -53,9 +53,9 @@ public class LoginPage extends Base {
 		System.out.println(excel.getRowDatas(2).get(1));
 		System.out.println(excel.getRowDatas(2).get(2));
 		try {
-			uName.sendKeys(config.getUserName());
-			pwd.sendKeys(config.getPassword());
-			btn.click();
+			userName.sendKeys(config.getUserName());
+			password.sendKeys(config.getPassword());
+			loginBtn.click();
 			test.log(Status.PASS, "Login is success");
 		} catch (Exception e) {
 			test.log(Status.FAIL, "Login is not success");
